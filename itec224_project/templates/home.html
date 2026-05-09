@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}Home — ITEC224{% endblock %}
+
+{% block content %}
+<!-- HERO -->
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow fade-up">
+      <span class="tag">ITEC224 — Web Development &amp; Scripting</span>
+    </div>
+    <h1 class="hero-title fade-up fade-up-1">
+      Web Scraping<br><em>Redefined.</em>
+    </h1>
+    <p class="hero-sub fade-up fade-up-2">
+      A full-stack Flask application that fetches, parses, saves, and delivers
+      scraped web data — straight to your inbox, automatically every morning.
+    </p>
+    <div class="hero-ctas fade-up fade-up-3">
+      <a href="/task" class="btn btn-primary">▶ &nbsp;Launch Scraper</a>
+      <a href="/about" class="btn btn-ghost">Meet the Team</a>
+    </div>
+
+    <div class="stats-bar fade-up fade-up-4">
+      <div class="stat">
+        <span class="stat-value">3</span>
+        <span class="stat-label">Pages</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">∞</span>
+        <span class="stat-label">URLs Supported</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">08:00</span>
+        <span class="stat-label">Daily Auto-Run</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">4</span>
+        <span class="stat-label">Team Members</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="tag">What it does</span>
+      <h2>Everything in one pipeline</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-up fade-up-1">
+        <span class="feature-icon">🌐</span>
+        <h3>URL Input</h3>
+        <p>Enter any public URL on the Task page. The app validates and passes it to the scraping engine instantly.</p>
+      </div>
+      <div class="feature-card fade-up fade-up-2">
+        <span class="feature-icon">🔍</span>
+        <h3>Smart Scraping</h3>
+        <p>Uses <strong>Requests</strong> + <strong>BeautifulSoup</strong> to extract titles, headings, paragraphs, links, and metadata.</p>
+      </div>
+      <div class="feature-card fade-up fade-up-3">
+        <span class="feature-icon">💾</span>
+        <h3>Auto Save</h3>
+        <p>All scraped results are saved as timestamped JSON files in the <code>scraped_data/</code> directory.</p>
+      </div>
+      <div class="feature-card fade-up fade-up-4">
+        <span class="feature-icon">📧</span>
+        <h3>Email Delivery</h3>
+        <p>The report is automatically emailed to every group member with the JSON file attached via Gmail SMTP.</p>
+      </div>
+      <div class="feature-card fade-up fade-up-1">
+        <span class="feature-icon">⏰</span>
+        <h3>Scheduled Jobs</h3>
+        <p>The <strong>schedule</strong> library triggers the scraper every morning at 08:00 AM in a background thread.</p>
+      </div>
+      <div class="feature-card fade-up fade-up-2">
+        <span class="feature-icon">⚡</span>
+        <h3>Live Feedback</h3>
+        <p>The Task page shows real-time results: scraped data summary displayed directly in the browser after submission.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="tech-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Built with</span>
+      <h2>Tech Stack</h2>
+    </div>
+    <div class="tech-chips">
+      <span class="chip">Python 3</span>
+      <span class="chip">Flask</span>
+      <span class="chip">Requests</span>
+      <span class="chip">BeautifulSoup4</span>
+      <span class="chip">smtplib</span>
+      <span class="chip">schedule</span>
+      <span class="chip">HTML5</span>
+      <span class="chip">CSS3</span>
+      <span class="chip">JavaScript</span>
+      <span class="chip">Jinja2</span>
+      <span class="chip">JSON</span>
+      <span class="chip">Gmail SMTP</span>
+    </div>
+  </div>
+</section>
+{% endblock %}

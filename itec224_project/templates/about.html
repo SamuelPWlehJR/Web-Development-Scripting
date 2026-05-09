@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}About — ITEC224{% endblock %}
+
+{% block content %}
+<div class="page-header fade-up">
+  <span class="tag">The Team</span>
+  <h1>Meet Our Group</h1>
+  <p>Each member's postcard — hover to explore.</p>
+</div>
+
+<section class="postcards-section">
+  <div class="postcards-grid">
+    {% set stamps = [] %}
+    {% set stripe_classes = ["stripe-1", "stripe-2", "stripe-3", "stripe-4", "stripe-5", "stripe-6"] %}
+
+    {% for member in members %}
+    <div class="postcard fade-up" style="animation-delay: {{ loop.index0 * 0.1 }}s">
+      <div class="postcard-stripe {{ stripe_classes[loop.index0] }}"></div>
+      <div class="postcard-stamp">{{ stamps[loop.index0] }}</div>
+
+      <img
+        class="postcard-photo"
+        src="{{ member.image }}"
+        alt="{{ member.name }}"
+        onerror="this.src='https://api.dicebear.com/7.x/initials/svg?seed={{ member.name }}&backgroundColor=1a1d26'"
+      />
+
+      <div class="postcard-body">
+        <div class="postcard-name">{{ member.name }}</div>
+        <div class="postcard-id">ID: {{ member.student_number }}</div>
+        <div class="divider"></div>
+        <div class="hobbies-label">Hobbies</div>
+        <div class="hobbies-list">
+          {% for hobby in member.hobbies %}
+          <span class="hobby-chip">{{ hobby }}</span>
+          {% endfor %}
+        </div>
+        <div class="postcard-lines">
+          <div class="postcard-line"></div>
+          <div class="postcard-line"></div>
+          <div class="postcard-line"></div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

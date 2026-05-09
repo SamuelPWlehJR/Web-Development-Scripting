@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}ITEC224{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/">ITEC224</a>
+  <ul class="nav-links">
+    <li><a href="/" class="{% if request.endpoint == 'home' %}active{% endif %}">Home</a></li>
+    <li><a href="/about" class="{% if request.endpoint == 'about' %}active{% endif %}">About</a></li>
+    <li><a href="/task" class="{% if request.endpoint == 'task' %}active{% endif %}">Task</a></li>
+  </ul>
+</nav>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<footer>
+  <p>ITEC224 &mdash; Web Development &amp; Scripting Project &copy; 2026</p>
+</footer>
+
+</body>
+</html>
